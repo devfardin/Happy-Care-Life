@@ -127,7 +127,12 @@ class Elementor_Products_widget extends \Elementor\Widget_Base
                             ?>
                         </div>
                         <?php if (!empty($regular_price || $sale_price) & $stock_status == 'instock') { ?>
-                            <a href="<?php echo get_permalink(); ?>" class="primary_btn">
+                            <?php
+                            global $product;
+                            $pid = $product->get_id();
+                            ?>
+                            <a href="<?php
+                            echo do_shortcode('[add_to_cart_url id=' . $pid . ']') ?>" class="primary_btn">
                                 অর্ডার করুন
                             </a>
                         <?php } else if ($stock_status == 'outofstock') { ?>
@@ -142,7 +147,6 @@ class Elementor_Products_widget extends \Elementor\Widget_Base
                             <?php
 
                             } ?>
-
                     </div>
                 </div>
                 <?php

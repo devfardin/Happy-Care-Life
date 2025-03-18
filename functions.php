@@ -41,3 +41,13 @@ function child_enqueue_styles() {
 }
 
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
+
+
+
+// After Add to cart its redirect checkout page
+function redirect_to_checkout() {
+    global $woocommerce;
+    $checkout_url = $woocommerce->cart->get_checkout_url();
+    return $checkout_url;
+}
+add_filter ('add_to_cart_redirect', 'redirect_to_checkout');
