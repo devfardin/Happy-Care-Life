@@ -13,6 +13,22 @@
  */
 define( 'CHILD_THEME_HAPPY_CARE_LIFE_VERSION', '1.0.0' );
 
+
+/**
+ * Register new Elementor widgets.
+ *
+ * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager.
+ * @return void
+ */
+
+function register_new_widgets( $widgets_manager ) {
+
+	require_once( __DIR__ . '/includes/widgets/products.php' );
+	$widgets_manager->register( new \Elementor_Products_widget() );
+
+}
+add_action( 'elementor/widgets/register', 'register_new_widgets' );
+
 /**
  * Enqueue styles
  */
