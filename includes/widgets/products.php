@@ -104,6 +104,7 @@ class Elementor_Products_widget extends \Elementor\Widget_Base
                 $product = wc_get_product(get_the_ID());
                 $regular_price = $product->get_regular_price();
                 $sale_price = $product->get_sale_price();
+                $stock_status = $product->get_stock_status();
                 ?>
                 <!-- Products Information here -->
                 <div class="products_inner_wrapper">
@@ -112,15 +113,36 @@ class Elementor_Products_widget extends \Elementor\Widget_Base
                         <a href="<?php echo get_permalink(); ?>" class="product_inner_title"><?php the_title(); ?></a>
                         <!-- Price Wrapper -->
                         <div class="products_inner_price_wrapper">
-                            <h3 class="regular__price"><?php echo wc_price($regular_price) ?></h3>
+
+                            <?php if ($regular_price && $sale_price) {
+                                ?>
+                                <h3 class="offer__price"><?php echo wc_price($regular_price) ?></h3>
+                            <?php } else { ?>
+                                <h3 class="regular__price"><?php echo wc_price($regular_price) ?></h3>
+                            <?php } ?>
+
                             <?php if (!empty($sale_price)) { ?>
                                 <h3 class="sele_price"><?php echo wc_price($sale_price) ?></h3>
                             <?php }
                             ?>
                         </div>
-                        <a href="<?php echo get_permalink(); ?>" class="primary_btn">
-                            অর্ডার করুন
-                        </a>
+                        <?php if (!empty($regular_price || $sale_price) & $stock_status == 'instock') { ?>
+                            <a href="<?php echo get_permalink(); ?>" class="primary_btn">
+                                অর্ডার করুন
+                            </a>
+                        <?php } else if ($stock_status == 'outofstock') { ?>
+                                <a class="primary_btn">
+                                    স্টক আউট
+                                </a>
+                            <?php
+                            } else { ?>
+                                <a class="primary_btn">
+                                <?php echo $stock_status ?>
+                                </a>
+                            <?php
+
+                            } ?>
+
                     </div>
                 </div>
                 <?php

@@ -61,10 +61,21 @@
     }
 }
 
-.products_inner_price_wrapper{
+.products_inner_price_wrapper {
     margin-top:10px;
     display: flex;
     justify-items: center;
     justify-content: center;
     gap: 15px;
+}
+.products_inner_price_wrapper h3{
+    font-family: "Poppins", Sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--e-global-color-primary);
+    line-height: 1.2em;
+}
+.products_inner_price_wrapper .offer__price{
+    color: #afafaf;
+    text-decoration: line-through;
 }
