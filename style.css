@@ -9,3 +9,46 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: happy-care-life
 Template: astra
 */
+
+
+/* Global style */
+.primary_btn{
+    background-color: var(--e-global-color-primary);
+    font-family: "Poppins", Sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: var(--e-global-color-primary);
+    border-radius: 3px 3px 3px 3px;
+    padding: 5px 20px 5px 20px;
+    color: white;
+    text-decoration: none !important;
+    transition: all 0.3s;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+@media only screen and (min-width: 992px) {
+    .primary_btn{
+        background-color: var(--e-global-color-primary);
+        font-size: 20px;
+        padding: 7px 20px 7px 20px;
+    }
+}
+.primary_btn:hover{
+    background-color: transparent;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: var(--e-global-color-primary);
+    color: var(--e-global-color-primary);
+    text-decoration: none !important;
+}
+
+/* all color  */
+
+/*
+--e-global-color-primary
+--e-global-color-secondary
+--e-global-color-text
+--e-global-color-accent */

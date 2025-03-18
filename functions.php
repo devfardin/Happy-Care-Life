@@ -21,6 +21,7 @@ define( 'CHILD_THEME_HAPPY_CARE_LIFE_VERSION', '1.0.0' );
  * @return void
  */
 
+ require_once(  __DIR__ . '/includes/setup.php' );
 function register_new_widgets( $widgets_manager ) {
 
 	require_once( __DIR__ . '/includes/widgets/products.php' );
@@ -35,6 +36,7 @@ add_action( 'elementor/widgets/register', 'register_new_widgets' );
 function child_enqueue_styles() {
 
 	wp_enqueue_style( 'happy-care-life-theme-css', get_stylesheet_directory_uri() . '/style.css', array('astra-theme-css'), CHILD_THEME_HAPPY_CARE_LIFE_VERSION, 'all' );
+	wp_register_style('happy_care_products_style', get_stylesheet_directory_uri()  . '/assets/css/products.css');
 
 }
 
