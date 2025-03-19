@@ -1,0 +1,97 @@
+.vrmedia-gallery{
+    max-width:567px;
+    margin:0 auto;
+    border-radius:8px;
+}
+.vrmedia-gallery img{
+    object-fit:cover;
+    width:100%
+}
+.vrmedia-gallery .lSGallery{
+    display:inline-flex
+}
+.vrmedia-gallery .lSGallery li{
+    border-radius:6px !important;
+    margin-top: 10px;
+    position: relative;
+}
+.vrmedia-gallery .lSGallery li::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.452);
+    content: '';
+}
+.vrmedia-gallery .lSGallery li.active{
+    border: 2px solid #178E79 !important;
+    position: relative;
+}
+.vrmedia-gallery .lSGallery li.active::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    content: '';
+}
+
+.lSAction > a {
+    background-color: #0F6A5E !important;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Singlel product container style */
+.happy_product_single_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 1170px;
+    margin: 5em auto;
+}
+@media only screen and (min-width: 992px) {
+    .happy_product_single_container{
+        flex-direction: row;
+        align-items: start;
+        justify-content: space-between;
+    }
+}
+.product-details .product-title{
+    font-family: "Poppins", Sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #178E79 ;
+}
+.primary_btn{
+    background-color: #178E79;
+    font-family: "Poppins", Sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #178E79;
+    border-radius: 3px 3px 3px 3px;
+    padding: 5px 20px 5px 20px;
+    color: white;
+    text-decoration: none !important;
+    transition: all 0.3s;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+@media only screen and (min-width: 992px) {
+    .primary_btn{
+        background-color: #178E79;
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+    }
+}
+.primary_btn:hover{
+    background-color: transparent;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #178E79;
+    color: #178E79;
+    text-decoration: none !important;
+}

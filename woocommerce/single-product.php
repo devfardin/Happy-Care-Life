@@ -1,62 +1,89 @@
 <?php
-/**
- * The Template for displaying all single products
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/single-product.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see         https://woocommerce.com/document/template-structure/
- * @package     WooCommerce\Templates
- * @version     1.6.4
- */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
 }
 
-get_header( 'shop' ); ?>
+get_header();
+wp_enqueue_style('happy_care_single_product');
+?>
 
-	<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
+<main id="custom-product-page">
+    <?php while (have_posts()):
+        the_post(); ?>
 
-		<?php while ( have_posts() ) : ?>
-			<?php the_post(); ?>
+        <div class="happy_product_single_container">
+            <!-- Product Image -->
+            <!-- Product Images (Feature Image & Gallery) -->
+            <div class="product-images">
 
-			<?php wc_get_template_part( 'content', 'single-product' ); ?>
+                <!-- Product Gallery Feature Start -->
+                <div class="vrmedia-gallery">
+                    <ul class="ecommerce-gallery">
+                        <?php
+                        global $product;
+                        // Get the featured image (main product image)
+                        $featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                        $featured_thumb_url = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+                        if ($featured_image_url) {
+                            echo '<li data-fancybox="gallery" data-src="' . esc_url($featured_image_url) . '" data-thumb="' . esc_url($featured_thumb_url) . '">
+                            <img src="' . esc_url($featured_thumb_url) . '">
+                            </li>';
+                        }
 
-		<?php endwhile; // end of the loop. ?>
+                        // Get gallery images
+                        $attachment_ids = $product->get_gallery_image_ids();
+                        if ($attachment_ids) {
+                            foreach ($attachment_ids as $attachment_id) {
+                                $image_url = wp_get_attachment_url($attachment_id);
+                                $image_thumb = wp_get_attachment_image_url($attachment_id, 'thumbnail');
+                                echo '<li data-fancybox="gallery" data-src="' . esc_url($image_url) . '" data-thumb="' . esc_url($image_thumb) . '">
+                                <img src="' . esc_url($image_thumb) . '">
+                                </li>';
+                            }
+                        }
+                        ?>
+                    </ul>
+                </div>
+                <!-- Product Gallery Feature End -->
+            </div>
 
-	<?php
-		/**
-		 * woocommerce_after_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-	?>
+            <!-- Product Summary -->
+            <div class="product-details">
+                <h1 class="product-title"><?php the_title(); ?></h1>
+                <div class="product-price"><?php wc_get_template('single-product/price.php'); ?></div>
+                <div class="product-description"><?php the_excerpt(); ?></div>
 
-	<?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
+                <!-- Custom Add to Cart Button -->
+                <div class="custom-add-to-cart">
+                    <?php
+                    global $product;
+                    $pid = $product->get_id();
+                    ?>
+                    <a href="<?php
+                    echo do_shortcode('[add_to_cart_url id=' . $pid . ']') ?>" class="primary_btn">
+                        অর্ডার করুন
+                    </a>
+                </div>
 
-<?php
-get_footer( 'shop' );
+                <!-- Product Meta (Categories, Tags) -->
+                <div class="product-meta">
+                    <?php woocommerce_template_single_meta(); ?>
+                </div>
+            </div>
+        </div>
+    <?php endwhile; ?>
+</main>
 
-/* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
+<script>
+    jQuery(document).ready(function ($) {
+        $(".ecommerce-gallery").lightSlider({
+            gallery: true,
+            item: 1,
+            loop: true,
+            thumbItem: 4,
+            thumbMargin: 10,
+            slideMargin: 0
+        });
+    });
+</script>
+<?php get_footer(); ?>
