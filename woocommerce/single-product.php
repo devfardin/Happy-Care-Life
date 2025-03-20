@@ -2,7 +2,6 @@
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
-
 get_header();
 wp_enqueue_style('happy_care_single_product');
 ?>
@@ -96,15 +95,11 @@ wp_enqueue_style('happy_care_single_product');
             </div>
         </div>
     <?php endwhile; ?>
-
     <!-- Product description and review section -->
     <div>
         <?php get_template_part('/includes/template-parts/product', 'detailsreviews') ?>          
     </div>
 </main>
-
-
-
 
 <script>
     jQuery(document).ready(function ($) {
@@ -117,7 +112,6 @@ wp_enqueue_style('happy_care_single_product');
             slideMargin: 0
         });
     });
-
 
 const accordionHeaders = document.querySelectorAll('.accordion-header');
 accordionHeaders.forEach(header => {
