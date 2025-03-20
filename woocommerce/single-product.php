@@ -56,7 +56,7 @@ wp_enqueue_style('happy_care_single_product');
                     ?> class="product-details__status">Status: <span>
                             <?php echo $product->get_stock_status() ?> </span></h1>
                 </div>
-                <div class="product-description"><?php the_excerpt(); ?></div>
+                <div class="product-description"><?php echo $product->get_short_description(); ?></div>
 
                 <!-- Custom Add to Cart Button -->
                 <div class="happy_product_action_button_wrapper">
@@ -96,7 +96,15 @@ wp_enqueue_style('happy_care_single_product');
             </div>
         </div>
     <?php endwhile; ?>
+
+    <!-- Product description and review section -->
+    <div>
+        <?php get_template_part('/includes/template-parts/product', 'detailsreviews') ?>          
+    </div>
 </main>
+
+
+
 
 <script>
     jQuery(document).ready(function ($) {
@@ -109,5 +117,18 @@ wp_enqueue_style('happy_care_single_product');
             slideMargin: 0
         });
     });
+
+
+const accordionHeaders = document.querySelectorAll('.accordion-header');
+accordionHeaders.forEach(header => {
+  header.addEventListener('click', () => {
+    const content = header.nextElementSibling; // Get the content panel
+    if (content.classList.contains('active')) {
+      content.classList.remove('active'); // Hide the content
+    } else {
+      content.classList.add('active'); // Show the content
+    }
+  });
+});
 </script>
 <?php get_footer(); ?>

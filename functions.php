@@ -47,6 +47,7 @@ function child_enqueue_styles()
     wp_enqueue_style('happy-care-life-theme-css', HAPPY_CARE_THEME_URL . '/style.css', array('astra-theme-css'), HAPPY_CARE_THEME_VERSION, 'all');
     wp_register_style('happy_care_products_style', HAPPY_CARE_THEME_URL . '/assets/css/products.css');
     wp_register_style('happy_care_single_product', HAPPY_CARE_THEME_URL . '/assets/css/woocommerce/single-product.css');
+    wp_register_style('happy_care_single_details_reviews', HAPPY_CARE_THEME_URL . '/assets/css/woocommerce/Product-details-reviews.css');
 
 }
 add_action('wp_enqueue_scripts', 'child_enqueue_styles', 15);

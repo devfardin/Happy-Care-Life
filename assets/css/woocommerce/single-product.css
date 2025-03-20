@@ -1,10 +1,15 @@
 .vrmedia-gallery {
-    max-width: 467px;
+    max-width: 360px;
     margin: 0 auto;
     border-radius: 8px;
     overflow: hidden;
 }
 
+@media only screen and (min-width: 425px) {
+    .vrmedia-gallery {
+        max-width: 400px;
+    }
+}
 @media only screen and (min-width: 768px) {
     .vrmedia-gallery {
         max-width: 567px;
@@ -61,6 +66,9 @@
     align-items: center;
 }
 
+#custom-product-page{
+    margin-bottom: 2em !important;
+}
 /* Singlel product container style */
 .happy_product_single_container {
     display: flex;
@@ -75,7 +83,7 @@
         flex-direction: row;
         align-items: start;
         justify-content: space-between;
-        margin: 5em 2em;
+        margin: 5em 2em 2em 2em;
     }
 }
 
@@ -124,7 +132,7 @@
 }
 
 .product-description {
-    margin-top: 20px;
+    margin: 20px 0;
     font-size: 20px;
     font-weight: 400;
     color: #666666;
