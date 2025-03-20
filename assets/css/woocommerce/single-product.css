@@ -1,32 +1,51 @@
-.vrmedia-gallery{
-    max-width:567px;
-    margin:0 auto;
-    border-radius:8px;
+.vrmedia-gallery {
+    max-width: 467px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
 }
-.vrmedia-gallery img{
-    object-fit:cover;
-    width:100%
+
+@media only screen and (min-width: 768px) {
+    .vrmedia-gallery {
+        max-width: 567px;
+    }
 }
-.vrmedia-gallery .lSGallery{
-    display:inline-flex
+
+@media only screen and (min-width: 992px) {
+    .vrmedia-gallery {
+        max-width: 567px;
+    }
 }
-.vrmedia-gallery .lSGallery li{
-    border-radius:6px !important;
+
+.vrmedia-gallery img {
+    object-fit: cover;
+    width: 100%
+}
+
+.vrmedia-gallery .lSGallery {
+    display: inline-flex
+}
+
+.vrmedia-gallery .lSGallery li {
+    border-radius: 6px !important;
     margin-top: 10px;
     position: relative;
 }
-.vrmedia-gallery .lSGallery li::before{
+
+.vrmedia-gallery .lSGallery li::before {
     position: absolute;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.452);
     content: '';
 }
-.vrmedia-gallery .lSGallery li.active{
+
+.vrmedia-gallery .lSGallery li.active {
     border: 2px solid #178E79 !important;
     position: relative;
 }
-.vrmedia-gallery .lSGallery li.active::before{
+
+.vrmedia-gallery .lSGallery li.active::before {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -34,36 +53,84 @@
     content: '';
 }
 
-.lSAction > a {
+.lSAction>a {
     background-color: #0F6A5E !important;
     border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 /* Singlel product container style */
-.happy_product_single_container{
+.happy_product_single_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    width: 1170px;
-    margin: 5em auto;
+    margin: 2em 0em;
 }
+
 @media only screen and (min-width: 992px) {
-    .happy_product_single_container{
+    .happy_product_single_container {
         flex-direction: row;
         align-items: start;
         justify-content: space-between;
+        margin: 5em 2em;
     }
 }
-.product-details .product-title{
+
+.product-details .product-title {
     font-family: "Poppins", Sans-serif;
-    font-size: 32px;
-    font-weight: 600;
-    color: #178E79 ;
+    font-size: 25px;
+    font-weight: 500;
+    color: #178E79;
 }
-.primary_btn{
+
+@media only screen and (min-width: 768px) {
+    .product-details .product-title {
+        font-size: 32px;
+        font-weight: 600;
+    }
+}
+.product-price {
+    font-family: "Poppins", Sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    color: #178E79;
+    line-height: 1.2em;
+    margin-top: 20px;
+}
+
+.product-price p {
+    margin-bottom: 0px !important;
+}
+
+.product-price del {
+    color: #afafaf;
+    text-decoration: line-through;
+}
+
+.product-details__status {
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Poppins", Sans-serif;
+    margin-top: 10px;
+    color: #505050;
+}
+
+.product-details__status span {
+    font-weight: 600 !important;
+    color: #178E79;
+}
+
+.product-description {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #666666;
+}
+
+.primary_btn {
     background-color: #178E79;
     font-family: "Poppins", Sans-serif;
     font-size: 17px;
@@ -72,7 +139,7 @@
     border-width: 2px 2px 2px 2px;
     border-color: #178E79;
     border-radius: 3px 3px 3px 3px;
-    padding: 5px 20px 5px 20px;
+    padding: 10px 20px 10px 20px;
     color: white;
     text-decoration: none !important;
     transition: all 0.3s;
@@ -80,18 +147,30 @@
     text-align: center;
     justify-content: center;
 }
+
 @media only screen and (min-width: 992px) {
-    .primary_btn{
+    .primary_btn {
         background-color: #178E79;
         font-size: 20px;
         padding: 10px 20px 10px 20px;
     }
 }
-.primary_btn:hover{
+
+.primary_btn:hover {
     background-color: transparent;
     border-style: solid;
     border-width: 2px 2px 2px 2px;
     border-color: #178E79;
     color: #178E79;
     text-decoration: none !important;
+}
+
+.primary_btn:focus {
+    color: white;
+}
+
+.happy_product_action_button_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

@@ -6,11 +6,10 @@ if (!defined('ABSPATH')) {
 get_header();
 wp_enqueue_style('happy_care_single_product');
 ?>
-
 <main id="custom-product-page">
     <?php while (have_posts()):
-        the_post(); ?>
-
+        the_post();
+        ?>
         <div class="happy_product_single_container">
             <!-- Product Image -->
             <!-- Product Images (Feature Image & Gallery) -->
@@ -51,23 +50,48 @@ wp_enqueue_style('happy_care_single_product');
             <div class="product-details">
                 <h1 class="product-title"><?php the_title(); ?></h1>
                 <div class="product-price"><?php wc_get_template('single-product/price.php'); ?></div>
+                <div>
+                    <h1 <?php
+                    global $product;
+                    ?> class="product-details__status">Status: <span>
+                            <?php echo $product->get_stock_status() ?> </span></h1>
+                </div>
                 <div class="product-description"><?php the_excerpt(); ?></div>
 
                 <!-- Custom Add to Cart Button -->
-                <div class="custom-add-to-cart">
+                <div class="happy_product_action_button_wrapper">
                     <?php
                     global $product;
                     $pid = $product->get_id();
+                    $product = wc_get_product(get_the_ID());
+                    $regular_price = $product->get_regular_price();
+                    $sale_price = $product->get_sale_price();
+                    $stock_status = $product->get_stock_status();
                     ?>
-                    <a href="<?php
-                    echo do_shortcode('[add_to_cart_url id=' . $pid . ']') ?>" class="primary_btn">
-                        অর্ডার করুন
-                    </a>
-                </div>
+                    <?php if (!empty($regular_price || $sale_price) & $stock_status == 'instock') { ?>
+                        <?php
+                        global $product;
+                        $pid = $product->get_id();
+                        ?>
+                        <a href="<?php
+                        echo do_shortcode('[add_to_cart_url id=' . $pid . ']') ?>" class="primary_btn">
+                            অর্ডার করুন
+                        </a>
+                    <?php } else if ($stock_status == 'outofstock') { ?>
+                            <a class="primary_btn">
+                                স্টক আউট
+                            </a>
+                        <?php
+                        } else { ?>
+                            <a class="primary_btn">
+                            <?php echo $stock_status ?>
+                            </a>
+                        <?php
+                        } ?>
 
-                <!-- Product Meta (Categories, Tags) -->
-                <div class="product-meta">
-                    <?php woocommerce_template_single_meta(); ?>
+                    <a href="tel:+8801846038819" class="primary_btn">
+                        অর্ডার করতে কল করুন +8801846038819
+                    </a>
                 </div>
             </div>
         </div>
