@@ -47,7 +47,14 @@
   background: #000;
 }
 .tabcontent{
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   color: #666666;
+}
+@media only screen and (min-width: 768px) {
+  .tabcontent{
+    font-size: 20px;
+    font-weight: 400;
+    color: #666666;
+  }
 }

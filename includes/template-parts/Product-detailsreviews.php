@@ -21,7 +21,6 @@ wp_enqueue_style('happy_care_single_details_reviews')
   ?>
 </div>
 
-
 <script>
   function openCity(evt, cityName) {
     var i, tabcontent, tablinks;

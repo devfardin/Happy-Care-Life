@@ -133,11 +133,17 @@
 
 .product-description {
     margin: 20px 0;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
     color: #666666;
 }
 
+@media only screen and (min-width: 768px) {
+    .product-description {
+        font-size: 20px;
+
+    }
+}
 .primary_btn {
     background-color: #178E79;
     font-family: "Poppins", Sans-serif;
