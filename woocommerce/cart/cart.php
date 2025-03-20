@@ -54,7 +54,7 @@ do_action('woocommerce_before_cart'); ?>
                                     echo $thumbnail; // PHPCS: XSS ok.
                                 } else {
                                     printf('<a href="%s">%s</a>', esc_url($product_permalink), $thumbnail); // PHPCS: XSS ok.
-                                }?>
+                                } ?>
                             </div>
                             <!-- Product title and price -->
                             <div class="woocommerce_cart_items_title_price">
@@ -116,8 +116,8 @@ do_action('woocommerce_before_cart'); ?>
                             </div>
                         </div>
                     </div>
-            <?php }
-            }?>
+                <?php }
+            } ?>
             <div class="actions woocommerce_cart__action">
                 <?php if (wc_coupons_enabled()) { ?>
                     <div class="coupon">
@@ -144,15 +144,22 @@ do_action('woocommerce_before_cart'); ?>
         <!-- </div> -->
     </form>
 
+    <!-- Cart Summary -->
     <div class="cart-collaterals_total">
-        <?php
-        /**
-         * Cart collaterals hook.
-         *
-         * @hooked woocommerce_cross_sell_display
-         * @hooked woocommerce_cart_totals - 10
-         */
-       do_action('woocommerce_cart_collaterals');
-        ?>
+        <div class="cart-summary">
+            <h2>Cart Summary</h2>
+        </div>
+        <div class="cart_totals">
+            <?php global $woocommerce;
+
+            // product total
+            echo $woocommerce->cart->get_cart_total();
+
+            // Total with delivery charge
+            echo $woocommerce->cart->total;
+
+
+            ?>
+        </div>
     </div>
 </div>

@@ -211,3 +211,12 @@
     background: var(--e-global-color-primary) !important;
   }
   
+
+  /* right side cart total  */
+  .cart-collaterals_total .cart_totals {
+    gap: 10px;
+    border: 1px solid #F7FAFC;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 10px;
+}
