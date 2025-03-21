@@ -46,7 +46,7 @@ body {
     border-style: solid;
     border-width: 2px 2px 2px 2px;
     border-color: var(--e-global-color-primary);
-    color: var(--e-global-color-primary);
+    color: white !important;
     text-decoration: none !important;
 }
 

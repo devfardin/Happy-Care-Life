@@ -9,7 +9,7 @@
   @media only screen and (min-width:768px){
     .woocommerce-cart-form .cart-summary h2, .cart_total_wrapper  h2 {
       font-size: 30px;
-      margin-bottom: 20px;
+      margin: 0 0 20px 0;
     }
   }
   .shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents {
@@ -219,4 +219,20 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
     padding: 10px;
+}
+
+/* Right side cart details */
+
+.cart-collaterals_total .cart-summary h2 {
+  font-size: 25px;
+  font-weight: 500;
+  color: #212121;
+  font-family: "Poppins", Sans-serif;
+  margin: 15px;
+}
+@media only screen and (min-width:768px){
+  .cart-collaterals_total .cart-summary h2 {
+    font-size: 30px;
+    margin: 0 0 20px 0;
+  }
 }

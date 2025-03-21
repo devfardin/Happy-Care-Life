@@ -18,10 +18,11 @@ defined('ABSPATH') || exit;
 do_action('woocommerce_before_cart'); ?>
 <?php wp_enqueue_style('happy-woocommerce-cart-style'); ?>
 
+
 <div class="woocommerce_cart_product_summery_price_wrapper">
     <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
         <div class="cart-summary">
-            <h2>Cart Summary</h2>
+            <h2>পণ্যের তালিকা</h2>
         </div>
         <?php do_action('woocommerce_before_cart_table'); ?>
         <div class="shop_table shop_table_responsive cart woocommerce-cart-form__contents">
@@ -147,19 +148,10 @@ do_action('woocommerce_before_cart'); ?>
     <!-- Cart Summary -->
     <div class="cart-collaterals_total">
         <div class="cart-summary">
-            <h2>Cart Summary</h2>
+            <h2>কার্টের মোট পরিমাণ</h2>
         </div>
         <div class="cart_totals">
-            <?php global $woocommerce;
-
-            // product total
-            echo $woocommerce->cart->get_cart_total();
-
-            // Total with delivery charge
-            echo $woocommerce->cart->total;
-
-
-            ?>
+            <?php do_action('woocommerce_cart_collaterals'); ?>
         </div>
     </div>
 </div>
