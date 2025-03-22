@@ -16,43 +16,48 @@
  */
 
 defined('ABSPATH') || exit;
-
 ?>
 <div class="cart_total_wrapper">
 
     <div class="<?php echo (WC()->customer->has_calculated_shipping()) ? 'calculated_shipping' : ''; ?>">
 
-            <!-- Top sub totle price -->
-            <div class="cart-subtotal">
-                <h3 class="Subtotal_price"> পণ্যের মূল্য: <?php wc_cart_totals_subtotal_html(); ?></h3>
-            </div>
+        <!-- Top sub totle price -->
+        <div class="cart-subtotal">
+            <h3 class="Subtotal_price"> পণ্যের মূল্য: <span>
+                    <?php wc_cart_totals_subtotal_html(); ?>
+                </span>
+            </h3>
+        </div>
 
-            <!-- chose Shipping box  -->
-            <?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()): ?>
-                <?php wc_cart_totals_shipping_html(); ?>
+        <!-- chose Shipping box  -->
+        <?php if (WC()->cart->needs_shipping() && WC()->cart->show_shipping()): ?>
+            <?php wc_cart_totals_shipping_html(); ?>
 
-            <?php elseif (WC()->cart->needs_shipping() && 'yes' === get_option('woocommerce_enable_shipping_calc')): ?>
+        <?php elseif (WC()->cart->needs_shipping() && 'yes' === get_option('woocommerce_enable_shipping_calc')): ?>
 
-                <tr class="shipping">
-                    <th><?php esc_html_e('Shipping', 'woocommerce'); ?></th>
-                    <td data-title="<?php esc_attr_e('Shipping', 'woocommerce'); ?>">
-                        <?php woocommerce_shipping_calculator(); ?>
-                    </td>
-                </tr>
-            <?php endif; ?>
+            <tr class="shipping">
+                <th><?php esc_html_e('Shipping', 'woocommerce'); ?></th>
+                <td data-title="<?php esc_attr_e('Shipping', 'woocommerce'); ?>">
+                    <?php woocommerce_shipping_calculator(); ?>
+                </td>
+            </tr>
+        <?php endif; ?>
 
 
-
-            <!-- Total Price -->
-            <div class="order-total">
-               <h3 class="order_total_price">মোট মূল্য: <span><?php wc_cart_totals_order_total_html(); ?></span> </h3>
-            </div>
+        <!-- Total Price -->
+        <div class="order-total">
+            <h3 class="order_total_price">মোট মূল্য: <span><?php wc_cart_totals_order_total_html(); ?></span> </h3>
+        </div>
 
         <div class="wc-proceed-to-checkout">
             <a class="primary_btn" href="<?php echo wc_get_checkout_url() ?>">
-            অর্ডার করতে ক্লিক করুন
+                অর্ডার করতে ক্লিক করুন
             </a>
         </div>
 
     </div>
 </div>
+
+<style>
+
+</style>

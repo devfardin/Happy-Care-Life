@@ -187,7 +187,7 @@
     } 
   }
   
-  .cart-collaterals_total .cart_totals {
+  .cart-collaterals_total .cart_total_wrapper {
     gap: 10px;
     border: 1px solid #F7FAFC;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -195,7 +195,7 @@
     padding: 10px;
   }
   @media only screen and (min-width:768px){
-    .cart-collaterals_total .cart_totals{
+    .cart-collaterals_total .cart_total_wrapper {
       gap: 20px;
       padding: 20px;
     }
@@ -213,13 +213,7 @@
   
 
   /* right side cart total  */
-  .cart-collaterals_total .cart_totals {
-    gap: 10px;
-    border: 1px solid #F7FAFC;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    padding: 10px;
-}
+
 
 /* Right side cart details */
 
@@ -235,4 +229,107 @@
     font-size: 30px;
     margin: 0 0 20px 0;
   }
+}
+.cart-subtotal .Subtotal_price {
+  font-size: 19px;
+  font-weight: 400;
+  font-family: "Poppins", Sans-serif;
+  margin: 10px 0;
+}
+.cart-subtotal .Subtotal_price span {
+  background: #EEFBF3;
+  padding: 5px 4px;
+  font-size: 19px;
+  font-weight: 500;
+  font-family: "Poppins", Sans-serif;
+}
+
+.order-total .order_total_price {
+  font-size: 19px;
+  font-weight: 400;
+  font-family: "Poppins", Sans-serif;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.order-total .order_total_price span {
+  background: #EEFBF3;
+  padding: 5px 4px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Poppins", Sans-serif;
+}
+
+
+/* Shipping method */
+
+ul#shipping_method li:not(.elementor-widget-woocommerce-cart #shipping_method li) {
+  margin: 0;
+  padding: 10px;
+  text-indent: 0px;
+  list-style: none outside;
+  border-radius: 5px;
+}
+
+.woocommerce-shipping-methods {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.woocommerce-shipping-methods li {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+/* Hide Default Radio Button */
+.woocommerce-shipping-methods input[type="radio"] {
+  display: none;
+}
+
+/* Style for Label */
+.woocommerce-shipping-methods label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  padding-left: 30px; /* Space for checkmark */
+  position: relative;
+}
+
+/* Custom Checkmark */
+.checkmark {
+  position: absolute;
+  left: 0px;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  border: 2px solid #178E79;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add Checkmark When Selected */
+.woocommerce-shipping-methods input[type="radio"]:checked + label .checkmark {
+  background: #178E79 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='white'%3E%3Cpath d='M20.285,5.705c0.391,0.39 0.391,1.024 0,1.414l-10.285,10.285c-0.39,0.391 -1.024,0.391 -1.414,0l-5.285,-5.285c-0.391,-0.39 -0.391,-1.024 0,-1.414c0.39,-0.391 1.024,-0.391 1.414,0l4.285,4.285l9.285,-9.285c0.39,-0.391 1.024,-0.391 1.414,0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+  background-size: 28px;
+}
+
+/* Background Change when Selected */
+.woocommerce-shipping-methods input[type="radio"]:checked + label {
+  background: #178E79;
+  border-radius: 5px;
+  padding: 12px 12px 12px 29px;
+  color: #fff;
 }

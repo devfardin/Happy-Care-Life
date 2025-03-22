@@ -36,7 +36,10 @@ $calculator_text = '';
                         } else {
                             printf('<input type="hidden" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" />', $index, esc_attr(sanitize_title($method->id)), esc_attr($method->id)); // WPCS: XSS ok.
                         }
-                        printf('<label for="shipping_method_%1$s_%2$s">%3$s</label>', $index, esc_attr(sanitize_title($method->id)), wc_cart_totals_shipping_method_label($method)); // WPCS: XSS ok.
+                        printf('<label for="shipping_method_%1$s_%2$s">%3$s
+                        <span class="checkmark"></span>
+                        </label>
+                        ', $index, esc_attr(sanitize_title($method->id)), wc_cart_totals_shipping_method_label($method)); // WPCS: XSS ok.
                         do_action('woocommerce_after_shipping_rate', $method, $index);
                         ?>
                     </li>
@@ -45,3 +48,11 @@ $calculator_text = '';
         <?php endif; ?>
     </td>
 </tr>
+<script>
+    jQuery(document).ready(function ($) {
+    $(".woocommerce-shipping-methods label").click(function () {
+        $(".woocommerce-shipping-methods label").removeClass("selected");
+        $(this).addClass("selected");
+    });
+});
+</script>
