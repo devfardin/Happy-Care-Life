@@ -18,7 +18,6 @@ defined('ABSPATH') || exit;
 do_action('woocommerce_before_cart'); ?>
 <?php wp_enqueue_style('happy-woocommerce-cart-style'); ?>
 
-
 <div class="woocommerce_cart_product_summery_price_wrapper">
     <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
         <div class="cart-summary">
@@ -108,12 +107,9 @@ do_action('woocommerce_before_cart'); ?>
                                                 esc_attr($_product->get_sku())
                                             ),
                                             $cart_item_key
-                                        );
-                                        ?>
+                                        ); ?>
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
                     </div>

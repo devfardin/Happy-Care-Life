@@ -26,12 +26,9 @@
         font-weight: 500;
     }
 }
-
 .woocommerce-billing-fields__field-wrapper .form-row .woocommerce-input-wrapper input:focus {
     border: 1px solid var(--e-global-color-primary);
 }
-
-
 
 p#billing_first_name_field {
     width: 100%;
@@ -44,7 +41,6 @@ p#billing_first_name_field {
     font-family: "Poppins", Sans-serif;
 }
 
-.woocommerce-order-overview__email,
-.woocommerce-customer-details {
+.woocommerce-order-overview__email, .woocommerce-column--shipping-address {
     display: none;
 }
