@@ -17,9 +17,7 @@
 
 defined('ABSPATH') || exit;
 ?>
-<div class="cart_total_wrapper">
-
-    <div class="<?php echo (WC()->customer->has_calculated_shipping()) ? 'calculated_shipping' : ''; ?>">
+    <div class="cart_totals <?php echo (WC()->customer->has_calculated_shipping()) ? 'calculated_shipping' : ''; ?>">
 
         <!-- Top sub totle price -->
         <div class="cart-subtotal">
@@ -35,12 +33,12 @@ defined('ABSPATH') || exit;
 
         <?php elseif (WC()->cart->needs_shipping() && 'yes' === get_option('woocommerce_enable_shipping_calc')): ?>
 
-            <tr class="shipping">
+            <div class="shipping">
                 <th><?php esc_html_e('Shipping', 'woocommerce'); ?></th>
-                <td data-title="<?php esc_attr_e('Shipping', 'woocommerce'); ?>">
+                <div>
                     <?php woocommerce_shipping_calculator(); ?>
-                </td>
-            </tr>
+                </div>
+            </div>
         <?php endif; ?>
 
 
@@ -50,14 +48,8 @@ defined('ABSPATH') || exit;
         </div>
 
         <div class="wc-proceed-to-checkout">
-            <a class="primary_btn" href="<?php echo wc_get_checkout_url() ?>">
+            <a class="primary_btn order" href="<?php echo wc_get_checkout_url() ?>">
                 অর্ডার করতে ক্লিক করুন
             </a>
         </div>
-
     </div>
-</div>
-
-<style>
-
-</style>

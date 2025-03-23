@@ -150,8 +150,6 @@ do_action('woocommerce_before_cart'); ?>
         <div class="cart-summary">
             <h2>কার্টের মোট পরিমাণ</h2>
         </div>
-        <div class="cart_totals">
-            <?php do_action('woocommerce_cart_collaterals'); ?>
-        </div>
+        <?php do_action('woocommerce_cart_collaterals'); ?>
     </div>
 </div>

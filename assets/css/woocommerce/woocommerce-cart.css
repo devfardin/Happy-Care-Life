@@ -187,7 +187,7 @@
     } 
   }
   
-  .cart-collaterals_total .cart_total_wrapper {
+  .cart_totals {
     gap: 10px;
     border: 1px solid #F7FAFC;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -195,7 +195,7 @@
     padding: 10px;
   }
   @media only screen and (min-width:768px){
-    .cart-collaterals_total .cart_total_wrapper {
+    .cart_totals {
       gap: 20px;
       padding: 20px;
     }
@@ -324,12 +324,13 @@ ul#shipping_method li:not(.elementor-widget-woocommerce-cart #shipping_method li
 .woocommerce-shipping-methods input[type="radio"]:checked + label .checkmark {
   background: #178E79 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='white'%3E%3Cpath d='M20.285,5.705c0.391,0.39 0.391,1.024 0,1.414l-10.285,10.285c-0.39,0.391 -1.024,0.391 -1.414,0l-5.285,-5.285c-0.391,-0.39 -0.391,-1.024 0,-1.414c0.39,-0.391 1.024,-0.391 1.414,0l4.285,4.285l9.285,-9.285c0.39,-0.391 1.024,-0.391 1.414,0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
   background-size: 28px;
+  left: 7px;
 }
 
 /* Background Change when Selected */
 .woocommerce-shipping-methods input[type="radio"]:checked + label {
   background: #178E79;
   border-radius: 5px;
-  padding: 12px 12px 12px 29px;
+  padding: 12px 12px 12px 35px;
   color: #fff;
 }
