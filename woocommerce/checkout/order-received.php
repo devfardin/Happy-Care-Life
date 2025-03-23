@@ -25,14 +25,10 @@ defined( 'ABSPATH' ) || exit;
 	/**
 	 * Filter the message shown after a checkout is complete.
 	 *
-	 * @since 2.2.0
-	 *
 	 * @param string         $message The message.
 	 * @param WC_Order|false $order   The order created during checkout, or false if order data is not available.
 	 */
-	$message = 'Thank you for choosing Al Arafat Publications for your learning journey! Your payment has been received and is under review. Course access will be granted within a few hours after admin approval.For any assistance, feel free to contact us at <a style="color:var(--e-global-color-primary); font-weight:500;" href="mailto:info@alarafatpublications.com">info@alarafatpublications.com</a>.';
-
-	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	$message = '💖 ধন্যবাদ! আপনার অর্ডার সফলভাবে সম্পন্ন হয়েছে। আমরা শীঘ্রই আপনার সাথে যোগাযোগ করবো। 🚀.';
 	echo $message;
 	?>
 </p>

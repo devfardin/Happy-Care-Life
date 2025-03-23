@@ -1,0 +1,50 @@
+.woocommerce-billing-fields__field-wrapper .form-row label {
+    font-size: 19px !important;
+    font-weight: 400 !important;
+    font-family: "Poppins", Sans-serif;
+}
+
+.woocommerce-billing-fields__field-wrapper .form-row .woocommerce-input-wrapper input {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    height: 55px;
+    font-size: 18px;
+    font-weight: 400 !important;
+    font-family: "Poppins", Sans-serif;
+}
+
+.woocommerce-billing-fields__field-wrapper .form-row .woocommerce-input-wrapper input::placeholder {
+    font-size: 18px;
+    font-weight: 400 !important;
+    font-family: "Poppins", Sans-serif;
+}
+
+@media only screen and (min-width:768px) {
+    .woocommerce-billing-fields__field-wrapper .form-row .woocommerce-input-wrapper input {
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+
+.woocommerce-billing-fields__field-wrapper .form-row .woocommerce-input-wrapper input:focus {
+    border: 1px solid var(--e-global-color-primary);
+}
+
+
+
+p#billing_first_name_field {
+    width: 100%;
+}
+
+/* Thank you message */
+.woocommerce-order .woocommerce-thankyou-order-received {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: "Poppins", Sans-serif;
+}
+
+.woocommerce-order-overview__email,
+.woocommerce-customer-details {
+    display: none;
+}
