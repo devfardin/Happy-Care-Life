@@ -29,9 +29,18 @@
 .woocommerce-billing-fields__field-wrapper .form-row .woocommerce-input-wrapper input:focus {
     border: 1px solid var(--e-global-color-primary);
 }
-
 p#billing_first_name_field {
     width: 100%;
+}
+.order_button{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+}
+/* default order button remove */
+.form-row.place-order {
+    display: none;
 }
 
 /* Thank you message */
