@@ -33,8 +33,8 @@ wp_enqueue_style('happy_care_single_details_reviews')
         <?php endforeach; ?>
       </div>
       <?php else: ?>
-        <div>
-          <h1>No prduct reviews</h1>
+        <div class="no_product_review__wrappper">
+          <h3>No Product reviews</h3>
         </div>
     <?php endif; ?>
   </div>
