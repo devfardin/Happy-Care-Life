@@ -17,8 +17,6 @@ function happy_register_notice_form()
         'position' => 20,
     ));
 
-
-
     // Add Group Field for Notices
     $group_field_id = $cmb->add_field(array(
         'id' => 'happy_review_group',
