@@ -96,7 +96,6 @@ class Elementor_Products_widget extends \Elementor\Widget_Base
             ),
         );
         $products = new WP_Query($args);
-
         if ($products->have_posts()) {
             echo '<div class="products_wrapper">';
             while ($products->have_posts()) {

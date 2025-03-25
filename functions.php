@@ -5,6 +5,9 @@
  * @package Happy Care Life
  * @since 1.0.0
  */
+if( ! defined( 'ABSPATH' ) ) {
+    die( 'Please do not access directly!' );
+};
 
 /**
  * Define Constants
@@ -25,7 +28,19 @@ require_once(HAPPY_CARE_THEME_DIR . '/includes/setup.php');
 require_once(HAPPY_CARE_THEME_DIR . '/includes/woocommerce/single-product.php');
 require_once(HAPPY_CARE_THEME_DIR . '/includes/woocommerce/woocommerce.php');
 require_once(HAPPY_CARE_THEME_DIR . '/includes/woocommerce/checkout.php');
+require_once(HAPPY_CARE_THEME_DIR . '/includes/admin-menu/admin-menu.php');
 
+
+// Check if CMB2 is already loaded
+if (!class_exists('CMB2_Bootstrap_270')) {
+    // Try loading CMB2 from the bundled version
+    if (file_exists(plugin_dir_path(__FILE__) . 'includes/cmb2/init.php')) {
+        require_once plugin_dir_path(__FILE__) . 'includes/cmb2/init.php';
+    } else {
+        // Show admin notice if CMB2 is missing
+        add_action('admin_notices', 'baitu_cmb2_missing_notice');
+    }
+}
 function register_new_widgets($widgets_manager)
 {
     require_once(HAPPY_CARE_THEME_DIR . '/includes/widgets/products.php');
