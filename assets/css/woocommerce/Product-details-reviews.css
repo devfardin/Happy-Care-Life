@@ -15,7 +15,7 @@
 
 .product_reviews__wrapper{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 20px;
   align-items: top;
   justify-content: space-between;
@@ -23,6 +23,11 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .product_reviews__wrapper {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 992px) {
   .product_reviews__wrapper {
       grid-template-columns: repeat(3, 1fr);
   }
