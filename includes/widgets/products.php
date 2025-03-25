@@ -108,7 +108,9 @@ class Elementor_Products_widget extends \Elementor\Widget_Base
                 ?>
                 <!-- Products Information here -->
                 <div class="products_inner_wrapper">
-                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>">
+                    <a href="<?php echo get_permalink(); ?>">
+                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>">
+                    </a>
                     <div class="products_inner__info">
                         <a href="<?php echo get_permalink(); ?>" class="product_inner_title"><?php the_title(); ?></a>
                         <!-- Price Wrapper -->

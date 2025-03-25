@@ -44,6 +44,7 @@ function child_enqueue_styles()
     wp_register_style('happy_care_single_details_reviews', HAPPY_CARE_THEME_URL . '/assets/css/woocommerce/Product-details-reviews.css');
     wp_register_style('happy-woocommerce-cart-style', HAPPY_CARE_THEME_URL . '/assets/css/woocommerce/woocommerce-cart.css');
     wp_enqueue_style('happy-woocommerce-checkout', HAPPY_CARE_THEME_URL . '/assets/css/woocommerce/checkout.css');
+    wp_enqueue_style('happy-woocommerce-archive-product', HAPPY_CARE_THEME_URL . '/assets/css/woocommerce/archive-product.css');
 }
 add_action('wp_enqueue_scripts', 'child_enqueue_styles', 15);
 

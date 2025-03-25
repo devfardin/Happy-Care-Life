@@ -1,0 +1,108 @@
+/* Product Innter wrapper */
+.woocommerce ul.products:not(.elementor-grid).columns-3, .woocommerce-page ul.products:not(.elementor-grid).columns-3{
+    row-gap: 20px;
+}
+
+.products_inner_wrapper{
+    border: 2px solid #ddd;
+    background: transparent;
+    border-radius: 6px;
+    transition: all 0.4s;
+    padding: 15px;
+}
+
+.products_inner_wrapper:hover{
+    border: 2px solid #178E79;
+    background: #EDF6EE;
+}
+
+.products_inner_wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+@media only screen and (min-width: 992px) {
+    .products_inner_wrapper img{
+        width: 400px;
+        height: 400px;
+    }
+}
+.products_inner_wrapper:hover .products_inner__info .product_inner_title{
+    color: #178E79;
+    
+}
+/* Product info style */
+.products_inner__info{
+    margin-top: 15px;
+}
+.products_inner__info .product_inner_title{
+    font-family: "Poppins", Sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #54595F;
+    text-decoration: none !important;
+    line-height: 1.2em;
+}
+@media only screen and (min-width: 992px) {
+    .products_inner__info .product_inner_title{
+        font-size: 19px;
+        line-height: 1.2em;
+    }
+}
+
+.products_inner_price_wrapper {
+    margin:10px 0;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.products_inner_price_wrapper h3{
+    font-family: "Poppins", Sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #178E79;
+    line-height: 1.2em;
+}
+.products_inner_price_wrapper .offer__price{
+    color: #afafaf;
+    text-decoration: line-through;
+}
+
+
+/* Global style */
+.primary_btn {
+    background-color: #178E79;
+    font-family: "Poppins", Sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #178E79;
+    border-radius: 3px 3px 3px 3px;
+    padding: 5px 20px 5px 20px;
+    color: white;
+    text-decoration: none !important;
+    transition: all 0.3s;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 992px) {
+    .primary_btn {
+        background-color: #178E79;
+        font-size: 20px;
+        padding: 7px 20px 7px 20px;
+    }
+}
+
+.primary_btn:hover {
+    background: transparent;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #178E79;
+    color: #178E79;
+    text-decoration: none !important;
+}
