@@ -1,6 +1,7 @@
 /* Product Innter wrapper */
 .woocommerce ul.products:not(.elementor-grid).columns-3, .woocommerce-page ul.products:not(.elementor-grid).columns-3{
     row-gap: 20px;
+    align-items: start;
 }
 
 .products_inner_wrapper{

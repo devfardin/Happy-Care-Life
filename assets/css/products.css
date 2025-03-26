@@ -1,15 +1,14 @@
 .products_wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 20px;
-    align-items: top;
     justify-content: space-between;
     align-items: start;
 }
 
 @media only screen and (min-width: 768px) {
     .products_wrapper {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
 /* Product Innter wrapper */
@@ -68,12 +67,14 @@
     justify-content: center;
     gap: 15px;
 }
+
 .products_inner_price_wrapper h3{
     font-family: "Poppins", Sans-serif;
     font-size: 20px;
     font-weight: 400;
     color: var(--e-global-color-primary);
-    line-height: 1.2em;
+    line-height: 1.2em; 
+    margin:0 ;
 }
 .products_inner_price_wrapper .offer__price{
     color: #afafaf;
